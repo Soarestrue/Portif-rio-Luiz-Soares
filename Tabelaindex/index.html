@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site feito por Luiz Soares</title>
+</head>
+<body>
+
+    <table width="100%" height="100%">
+        <tr bgcolor="orange">
+            <td colspan="3" align="center">
+                <img src="ImgforLuiz.jpeg" alt="Imagem centralizada" width="300">
+            </td>
+        </tr>
+
+        <tr bgcolor="white">
+            <td>
+                <h1>Menu</h1>
+                <a href="#" onclick="mostrarImagem('img1')">Cidade onde nasceu:</a><br>
+                <a href="#" onclick="mostrarImagem('img2')">Time do coração:</a><br>
+                <a href="#" onclick="mostrarImagem('img3')">Hobbie:</a>
+            </td>
+
+            <td align="center">
+                <div id="areaCentral">
+                    <h3>Apresentação</h3>
+                </div>
+            </td>
+
+            <td>
+                <h1>Referências</h1>
+                <p>Deus</p>
+            </td>
+        </tr>
+
+        <tr bgcolor="black">
+            <td colspan="3" align="center">
+                <font color="white">© Direitos de Soares Company</font>
+            </td>
+        </tr>
+    </table>
+
+    <script>
+        function mostrarImagem(opcao) {
+            var area = document.getElementById("areaCentral");
+            area.innerHTML = "";
+
+            var img = document.createElement("img");
+            img.width = 400;
+
+            if (opcao === "img1") {
+                img.src = "imagem1.jpg";
+            } else if (opcao === "img2") {
+                img.src = "imagem2.jpg";
+            } else if (opcao === "img3") {
+                img.src = "imagem3.jpg";
+            }
+
+            img.onerror = function() {
+                var msg = document.createElement("p");
+                msg.textContent = "Imagem não encontrada!";
+                area.appendChild(msg);
+            };
+
+            area.appendChild(img);
+        }
+    </script>
+
+</body>
+</html>
